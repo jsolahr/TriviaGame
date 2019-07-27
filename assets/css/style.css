@@ -1,0 +1,28 @@
+body {
+    background-image: url("https://images6.alphacoders.com/650/thumb-1920-650608.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+    background-size: cover;
+}
+h1 {
+    padding-top: 40px;
+    font-family: 'Source Serif Pro', serif;
+    color: rgba(26, 26, 109, 0.884);
+    background: none;
+    text-align: center;
+    font-size: 80px;
+    font-weight: none;
+}
+h2 {
+    font-family: 'Source Serif Pro', serif;
+    color: rgb(105, 21, 21);
+    background: none;
+    text-align: center;
+    font-size: 55px;
+    font-weight: bold;
+}
+#singlebutton {
+    font-size: 60px;
+    font-family: 'Source Serif Pro', serif;
+}
