@@ -14,17 +14,33 @@
 <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
+<!--Start Game Page-->
     <div class="container">
         <div class ="row">
             <div class="col-md-12">
                 <h1>Forrest Gump</h1>
                 <h2>Trivia Game</h2>
-                </div>
+            </div>
     <div class="container">
         <div class="col-md-12 text-center"> 
-                <button type="button" class="btn btn-outline-secondary btn-lg">Start</button>
+                <button id="start-button" class="btn btn-outline-secondary btn-lg">Start</button>
          </div>
     </div>
+    <p></p>
+    <div class="list-group">
+        <button type="button" class="list-group-item list-group-item-action active" id="question" disabled></button>
+        <button type="button" class="list-group-item list-group-item-action" id = "button1"></button>
+        <button type="button" class="list-group-item list-group-item-action" id = "button2"></button>
+        <button type="button" class="list-group-item list-group-item-action" id = "button3"></button>
+        <button type="button" class="list-group-item list-group-item-action" id = "button4"></button>
+      </div>
+    <!---<div class="card" style="width: 22rem;">
+                <img class="card-img-top" src="https://media.giphy.com/media/QLKSt3wQqlj7a/giphy.gif" alt="Forest Gump">
+                <div class="card-body">
+                  <p class="card-text">Text Goes here</p>
+                </div>
+            </div>
+          -->
 
 <!-- Added link to the jQuery library -->
 <script src="https://code.jquery.com/jquery-3.4.1.js"
