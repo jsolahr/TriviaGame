@@ -74,16 +74,20 @@ var questions = [
    },
 ]
 
-// Variable that I'll use later to go through the array of questions 
+// Variables that I'll use later to go through my object of questions 
 var lastQuestionRef = questions.length-1; 
 var runningQuestionRef = 0;
+//Variables to keep score
 var correctResponse = 0;
 var incorrectResponses = 0;
+//variables to keep time
+
 
 // FUNCTIONS (These are bits of code that we will call upon to run when needed).
 // ==================================================================================================//
+//Function to create new questions and print to console 
 function renderQuestions () {
-    let q = questions[runningQuestionRef];
+    var q = questions[runningQuestionRef];
 
     $("#question").html("<p>" + q.question + "<p/>");
     $("#a").html(q.choiceA);
@@ -91,13 +95,11 @@ function renderQuestions () {
     $("#c").html(q.choiceC);
     $("#d").html(q.choiceD);
 }
-//Function to Start Game
+//Function to Start Game and render questions
 function startGame (){
 $("#start-button").replaceWith(" ");
 renderQuestions();
 }
-//Start Game when you click the start button 
-$("#start-button").on("click", startGame);
 
 ///Function to check answers
 function checkAnswer(guess){
@@ -111,16 +113,14 @@ function checkAnswer(guess){
      runningQuestionRef++;
      renderQuestions();
  } else if (runningQuestionRef = lastQuestionRef) {
-     $("#question").html("Game-Over");
-     $("#a").html("Correct Answers: " + correctResponse);
-     $("#b").html("Incorrect Answers: " + incorrectResponses);
+     $("#question").html("<h3>Game-Over</h3>");
+     $("#a").html("<h4>Correct Answers: " + correctResponse + "</h4>");
+     $("#b").html("<h4>Incorrect Answers: " + incorrectResponses + "</h4>");
      $("#c").replaceWith(" ");
      $("#d").replaceWith(" ");
 }
 }
 ///******************************************Main Game*************************************************** */
 $(document).ready(function() {
-$("#start-button").on("click", function(){
-   startGame ();
-});
+    $("#start-button").on("click", startGame)
 });
