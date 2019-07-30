@@ -21,19 +21,25 @@
                 <h1>Forrest Gump</h1>
                 <h2>Trivia Game</h2>
             </div>
+            <!--Start Button-->
     <div class="container">
         <div class="col-md-12 text-center"> 
                 <button id="start-button" class="btn btn-outline-secondary btn-lg">Start</button>
          </div>
+         <img id ="image">
     </div>
     <p></p>
+         <!--Questions & Buttons-->
     <div class="list-group">
         <button type="button" class="list-group-item list-group-item-action active" id="question" disabled></button>
         <button type="button" class="list-group-item list-group-item-action" id = "a" onclick = "checkAnswer('A')"></button>
         <button type="button" class="list-group-item list-group-item-action" id = "b" onclick = "checkAnswer('B')"></button>
         <button type="button" class="list-group-item list-group-item-action" id = "c" onclick = "checkAnswer('C')"></button>
-        <button type="button" class="list-group-item list-group-item-action" id = "d" onclick = "checkAnswer('D')"></button>
-      </div>
+        <button type="button" class="list-group-item list-group-item-action" id = "d" onclick = "checkAnswer('D')"></button> 
+        <p></p>
+           <!--Timer-->
+        <div id = "clock"></div>
+    </div>
  
 <!-- Added link to the jQuery library -->
 <script src="https://code.jquery.com/jquery-3.4.1.js"

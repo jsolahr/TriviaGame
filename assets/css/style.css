@@ -27,9 +27,10 @@ h2 {
     font-family: Arial, Helvetica, sans-serif
 }
 .button {
-font-family:Arial, Helvetica, sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
    color: black;
    background-color: gray;
+   font-weight: bold;
 }
 h4 {
     font-family: Arial, Helvetica, sans-serif;
@@ -39,11 +40,24 @@ h4 {
     border: transparent;
     background-color: white;
     color: black;
-    text-align: center;
+    text-align: left;
+    line-height: 20px;
 }
 #question {
     font-family: 'Source Serif Pro', serif;
     background-color: white;
-    color: black;
+    color: rgb(105, 21, 21);
     font-size: 22px;
+    font-weight: bold;
+}
+#clock {
+    font-family: 'Source Serif Pro', serif;
+    font-size: 30px;
+    color: rgba(26, 26, 109, 0.884);
+    font-weight: bold 2px;
+    padding-left: 20px;
+}
+h3 {
+    font-family: 'Source Serif Pro', serif;
+    color: rgb(105, 21, 21);
 }

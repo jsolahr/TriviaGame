@@ -2,10 +2,10 @@
 var questions = [
     {
     question: "Mama always said, 'Life is like?'", 
-    choiceA: "Making lemonade out of lemons",
-    choiceB: "A box of chocolates, you never know what you're going get.",
-    choiceC: "Riding a bicycle",
-    choiceD: "A beautiful melody, only the lyrics are messed up",
+    choiceA: "A. Making lemonade out of lemons",
+    choiceB: "B. A box of chocolates, you never know what you're going get.",
+    choiceC: "C. Riding a bicycle",
+    choiceD: "D. A beautiful melody, only the lyrics are messed up",
     answer: "B"
     },
     {
@@ -17,20 +17,20 @@ var questions = [
     answer: "A"
     },
     {
-    question: "What year was it in the opening scene of the movie?",
-    choiceA: "1991",
-    choiceB: "1971",
-    choiceC: "1981",
-    choiceD: "1961",
-    answer: "D"
+    question: "Where was Forrest shot during the Vietnam War?",
+    choiceA: "In the Arm",
+    choiceB: "In the Butt",
+    choiceC: "In the Leg",
+    choiceD: "In the Hand",
+    answer: "B"
     },
     {
-    question: "How long did it rain in Vietnam?",
-    choiceA: "4 hours",
-    choiceB: "4 days",
-    choiceC: "4 months",
-    choiceD: "4 years",
-    answer: "C"
+    question: "What's the name of Forrest's shrimp company?",
+    choiceA: "Gump Bubba Shrimp Co",
+    choiceB: "Bubba Gump Shrimp Co",
+    choiceC: "Bubba's Shrimp",
+    choiceD: "Bubba's Best Shrimp",
+    answer: "B"
    },
    {
     question: "What does Forrest name all his shrimp boats?",
@@ -49,11 +49,19 @@ var questions = [
     answer: "A"
    },
    {
-    question: "What famous musician was on the TV talk show with Forrest?",
+    question: "What famous musician was on a TV talk show with Forrest?",
     choiceA: "Ringo Starr",
     choiceB: "John Lennon",
     choiceC: "George Harrison",
     choiceD: "Paul McCartney",
+    answer: "B"
+   },
+   {
+    question: "What foods did Forrest use to describe him and Jenny?",
+    choiceA: "spaghetti and meatballs",
+    choiceB: "peas and carrots",
+    choiceC: "chicken and noodles",
+    choiceD: "bread and butter",
     answer: "B"
    },
    {
@@ -81,9 +89,11 @@ var runningQuestionRef = 0;
 var correctResponse = 0;
 var incorrectResponses = 0;
 //variables to keep time
+let count = 10; 
+var questionsTime = 10;
+var settingTime;
 
-
-// FUNCTIONS (These are bits of code that we will call upon to run when needed).
+// FUNCTIONS (These are bits  of code that we will call upon to run when needed).
 // ==================================================================================================//
 //Function to create new questions and print to console 
 function renderQuestions () {
@@ -97,30 +107,51 @@ function renderQuestions () {
 }
 //Function to Start Game and render questions
 function startGame (){
-$("#start-button").replaceWith(" ");
-renderQuestions();
+    $("#start-button").replaceWith(" ");
+    renderQuestions();
+    settingTime = setInterval(timerStart, 1000);
+    timerStart();
 }
 
 ///Function to check answers
 function checkAnswer(guess){
- if (questions[runningQuestionRef].answer == guess) {
-     alert('Correct!');
-     correctResponse++;
- } else  {
-     alert("Wrong!");
-     incorrectResponses++;
- } if (runningQuestionRef < lastQuestionRef) {
-     runningQuestionRef++;
-     renderQuestions();
- } else if (runningQuestionRef = lastQuestionRef) {
-     $("#question").html("<h3>Game-Over</h3>");
-     $("#a").html("<h4>Correct Answers: " + correctResponse + "</h4>");
-     $("#b").html("<h4>Incorrect Answers: " + incorrectResponses + "</h4>");
-     $("#c").replaceWith(" ");
-     $("#d").replaceWith(" ");
+    if (questions[runningQuestionRef].answer == guess) {
+        alert('Correct!');
+        correctResponse++;
+        count = 10;
+    } else  {
+        alert("Wrong!");
+        incorrectResponses++;
+        count = 10;
+    } if (runningQuestionRef < lastQuestionRef) {
+        runningQuestionRef++;
+        renderQuestions();
+    } else if (runningQuestionRef = lastQuestionRef) {
+        $("#question").replaceWith("<h3>Game Over</h3>");
+        $("#a").replaceWith("<h4>Correct Answers: " + correctResponse + "</h4>");
+        $("#b").replaceWith("<h4>Incorrect Answers: " + incorrectResponses + "</h4>");
+        $("#c").replaceWith(" ");
+        $("#d").replaceWith(" ");
+        $("#clock").replaceWith(" ");
+        clearInterval(settingTime);
+    }
 }
+//Function to set timer 
+function timerStart () {
+    if(count >= 0) {
+        $("#clock").html("<h5>Time Remaining: " + count + "</h5>");
+        count--;
+    } else {
+       count =10;
+        if (runningQuestionRef < lastQuestionRef) {
+            runningQuestionRef++;
+            renderQuestions();
+       } else {
+            clearInterval(settingTime);
+        }
+    }
 }
-///******************************************Main Game*************************************************** */
+    ///******************************************Start Game*************************************************** */
 $(document).ready(function() {
-    $("#start-button").on("click", startGame)
+    $("#start-button").on("click", startGame);
 });
