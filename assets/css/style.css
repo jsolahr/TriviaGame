@@ -7,33 +7,30 @@ body {
 }
 h1 {
     padding-top: 40px;
-    font-family: 'Source Serif Pro', serif;
-    color: rgba(26, 26, 109, 0.884);
+    font-family: 'Oranienbaum', serif;
+    color: rgba(20, 42, 92, 0.973);
     background: none;
     text-align: center;
-    font-size: 80px;
-    font-weight: none;
+    font-size: 110px;
+    letter-spacing: -6px;
+    transform: scaleY(1.2);
 }
 h2 {
-    font-family: 'Source Serif Pro', serif;
+    font-family: 'Oranienbaum', serif;
     color: rgb(105, 21, 21);
     background: none;
     text-align: center;
-    font-size: 60px;
-    font-weight: bold;
+    font-size: 70px;
+    line-height: 20px;
+    padding-bottom: 25px;
+    letter-spacing: -4px;
 }
 #start-button{
     font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif
-}
-.button {
-    font-family:Arial, Helvetica, sans-serif;
-   color: black;
-   background-color: gray;
-   font-weight: bold;
+    font-family: 'Adamina', serif;
 }
 h4 {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Adamina', serif;    
     background-color: white;
 }
 .list-group-item {
@@ -44,20 +41,20 @@ h4 {
     line-height: 20px;
 }
 #question {
-    font-family: 'Source Serif Pro', serif;
+    font-family: 'Adamina', serif;
     background-color: white;
     color: rgb(105, 21, 21);
     font-size: 22px;
     font-weight: bold;
 }
 #clock {
-    font-family: 'Source Serif Pro', serif;
+    font-family: 'Adamina', serif;
     font-size: 30px;
     color: rgba(26, 26, 109, 0.884);
     font-weight: bold 2px;
     padding-left: 20px;
 }
 h3 {
-    font-family: 'Source Serif Pro', serif;
+    font-family: 'Adamina', serif;
     color: rgb(105, 21, 21);
 }

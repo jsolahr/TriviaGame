@@ -6,7 +6,7 @@ var questions = [
     choiceB: "B. A box of chocolates, you never know what you're going get.",
     choiceC: "C. Riding a bicycle",
     choiceD: "D. A beautiful melody, only the lyrics are messed up",
-    answer: "B"
+    answer: "B" 
     },
     {
     question: "What city and state is Forrest from?",
@@ -89,11 +89,11 @@ var runningQuestionRef = 0;
 var correctResponse = 0;
 var incorrectResponses = 0;
 //variables to keep time
-let count = 10; 
+let count = 15; 
 var questionsTime = 10;
 var settingTime;
 
-// FUNCTIONS (These are bits  of code that we will call upon to run when needed).
+// FUNCTIONS 
 // ==================================================================================================//
 //Function to create new questions and print to console 
 function renderQuestions () {
@@ -118,11 +118,11 @@ function checkAnswer(guess){
     if (questions[runningQuestionRef].answer == guess) {
         alert('Correct!');
         correctResponse++;
-        count = 10;
+        count = 15;
     } else  {
         alert("Wrong!");
         incorrectResponses++;
-        count = 10;
+        count = 15;
     } if (runningQuestionRef < lastQuestionRef) {
         runningQuestionRef++;
         renderQuestions();
@@ -142,7 +142,7 @@ function timerStart () {
         $("#clock").html("<h5>Time Remaining: " + count + "</h5>");
         count--;
     } else {
-       count =10;
+       count =15;
         if (runningQuestionRef < lastQuestionRef) {
             runningQuestionRef++;
             renderQuestions();
@@ -151,6 +151,7 @@ function timerStart () {
         }
     }
 }
+
     ///******************************************Start Game*************************************************** */
 $(document).ready(function() {
     $("#start-button").on("click", startGame);
